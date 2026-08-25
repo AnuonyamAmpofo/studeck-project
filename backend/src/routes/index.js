@@ -19,3 +19,4 @@ router.use('/quizzes', quizRoutes);
 router.use('/cold-start-defaults', coldStartRoutes);
 
 module.exports = router;
+

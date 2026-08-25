@@ -20,4 +20,10 @@ module.exports = {
     apiKey: process.env.ANTHROPIC_API_KEY || '',
     model: process.env.CLAUDE_MODEL || 'claude-sonnet-5',
   },
+  google: {
+    // The "Web application" OAuth client ID from Google Cloud Console — this
+    // is the audience the ID token must be issued for. Same value used by
+    // both the iOS and Android Flutter clients when requesting a token.
+    clientId: process.env.GOOGLE_CLIENT_ID || '',
+  },
 };

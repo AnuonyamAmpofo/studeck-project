@@ -18,6 +18,7 @@ router.post(
 );
 
 router.post('/login', [body('email').isEmail().normalizeEmail(), body('password').notEmpty()], validate, authController.login);
+router.post('/google', [body('idToken').notEmpty()], validate, authController.googleAuth);
 router.post('/refresh', authController.refresh);
 router.post('/logout', authController.logout);
 router.get('/me', requireAuth, authController.me);
