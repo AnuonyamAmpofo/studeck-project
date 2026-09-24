@@ -17,6 +17,7 @@ router.post(
   validate,
   quizController.generate
 );
+router.get('/attempts', quizController.listAttempts);
 router.get('/:id', quizController.getOne);
 router.post('/:id/attempts', quizController.startAttempt);
 router.post('/attempts/:attemptId/submit', quizController.submitAttempt);

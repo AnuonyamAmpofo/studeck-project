@@ -43,6 +43,14 @@ async function createAttempt({ quizId, userId, totalQuestions }) {
   return rows[0];
 }
 
+async function listAttemptsForUser(userId) {
+  const { rows } = await db.query(
+    `SELECT * FROM quiz_attempts WHERE user_id = $1 AND completed_at IS NOT NULL ORDER BY completed_at DESC`,
+    [userId]
+  );
+  return rows;
+}
+
 async function findAttemptForUser(attemptId, userId) {
   const { rows } = await db.query('SELECT * FROM quiz_attempts WHERE id = $1 AND user_id = $2', [attemptId, userId]);
   return rows[0] || null;
@@ -69,6 +77,7 @@ module.exports = {
   getQuestions,
   findByIdForUser,
   createAttempt,
+  listAttemptsForUser,
   findAttemptForUser,
   recordAnswer,
   completeAttempt,

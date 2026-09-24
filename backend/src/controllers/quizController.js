@@ -31,6 +31,11 @@ const getOne = asyncHandler(async (req, res) => {
   res.json({ quiz, questions: questions.map(toSafeQuestion) });
 });
 
+const listAttempts = asyncHandler(async (req, res) => {
+  const attempts = await quizModel.listAttemptsForUser(req.userId);
+  res.json({ attempts });
+});
+
 const startAttempt = asyncHandler(async (req, res) => {
   const quiz = await quizModel.findByIdForUser(req.params.id, req.userId);
   if (!quiz) throw new ApiError(404, 'Quiz not found');
@@ -70,4 +75,4 @@ const submitAttempt = asyncHandler(async (req, res) => {
   res.json({ attempt: completedAttempt, results });
 });
 
-module.exports = { generate, getOne, startAttempt, submitAttempt };
+module.exports = { generate, listAttempts, getOne, startAttempt, submitAttempt };
