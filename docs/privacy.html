@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Studeck — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #14102B;
+    --surface: #1E1A3D;
+    --border: #2E2A55;
+    --primary: #6C5CE7;
+    --text: #F5F4FF;
+    --text-muted: #A6A2C4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  h1 { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+  .updated { color: var(--text-muted); font-size: 13px; margin-bottom: 32px; }
+  h2 { font-size: 17px; font-weight: 700; margin-top: 32px; margin-bottom: 8px; }
+  p, li { color: var(--text-muted); font-size: 14.5px; }
+  ul { padding-left: 20px; }
+  a { color: var(--primary); }
+  .note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+  .note p { color: var(--text); margin: 0; }
+  code { background: var(--surface); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Studeck Privacy Policy</h1>
+  <p class="updated">Last updated: [fill in date]</p>
+
+  <div class="note">
+    <p>Studeck is a research project built as a University of Ghana Computer
+    Science capstone. This policy explains what data the app collects during
+    the pilot study, why, and who it's shared with.</p>
+  </div>
+
+  <h2>What we collect</h2>
+  <ul>
+    <li><strong>Account information</strong> — your email address and full name, either entered directly or provided by Google if you sign in with Google.</li>
+    <li><strong>Courses you add</strong> — course name, code, and the learning type you assign it (calculation, concept, skill, or mixed).</li>
+    <li><strong>Study session data</strong> — the study method(s) used, planned and actual duration, environment, whether focus mode was on, your self-rating of how the session went, and outcome scores from any practice problems you log.</li>
+    <li><strong>Grades you choose to enter</strong> — assessment name and score, for the courses you add them to.</li>
+    <li><strong>AI-generated quizzes</strong> — the topic or lecture material text you provide to generate a quiz, the generated questions, and your answers.</li>
+  </ul>
+
+  <h2>How it's used</h2>
+  <p>Your session data is used to detect patterns specific to you — such as
+  what time of day you tend to perform best, which study methods work for you,
+  and how your self-assessed understanding compares to your actual quiz and
+  problem scores. These insights are generated from your own data only.
+  Studeck never combines one student's data with another's to generate
+  insights, and does not compare you against other students.</p>
+
+  <h2>Who we share data with</h2>
+  <ul>
+    <li><strong>Supabase</strong> — our database host, where all app data is stored (PostgreSQL, hosted in the EU).</li>
+    <li><strong>Google</strong> — only if you choose "Continue with Google" to sign in; Google provides your name and email to authenticate you.</li>
+    <li><strong>Anthropic (Claude API)</strong> — if you generate an AI quiz, the topic or lecture text you provide is sent to Anthropic to generate questions. Anthropic does not receive any other account data.</li>
+  </ul>
+  <p>We do not sell or share your data with any other third party, and we do
+  not use it for advertising.</p>
+
+  <h2>Your choices</h2>
+  <p>You can request that your account and all associated data be deleted at
+  any time by contacting us at
+  <a href="mailto:studeck-support@googlegroups.com">studeck-support@googlegroups.com</a>.
+  Participation in the Studeck pilot is voluntary, and you may stop using the
+  app and request deletion at any point without giving a reason.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or how your data is used can be sent to
+  <a href="mailto:studeck-support@googlegroups.com">studeck-support@googlegroups.com</a>.</p>
+</main>
+</body>
+</html>

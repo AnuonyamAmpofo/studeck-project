@@ -21,9 +21,16 @@ module.exports = {
     model: process.env.CLAUDE_MODEL || 'claude-sonnet-5',
   },
   google: {
-    // The "Web application" OAuth client ID from Google Cloud Console — this
-    // is the audience the ID token must be issued for. Same value used by
-    // both the iOS and Android Flutter clients when requesting a token.
-    clientId: process.env.GOOGLE_CLIENT_ID || '',
+    // Google issues ID tokens audienced to whichever platform-specific
+    // client ID actually performed the sign-in — iOS tokens carry the iOS
+    // client ID as `aud`, Android tokens carry the Android one, not the Web
+    // client ID. So verification must accept a list of valid audiences,
+    // one per platform client that exists. This is Google's own documented
+    // pattern, not a workaround.
+    clientIds: [
+      process.env.GOOGLE_CLIENT_ID,
+      process.env.GOOGLE_IOS_CLIENT_ID,
+      process.env.GOOGLE_ANDROID_CLIENT_ID,
+    ].filter(Boolean),
   },
 };

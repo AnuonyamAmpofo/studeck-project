@@ -72,11 +72,13 @@ const login = asyncHandler(async (req, res) => {
 const googleAuth = asyncHandler(async (req, res) => {
   const { idToken } = req.body;
   if (!idToken) throw new ApiError(422, 'idToken is required');
-  if (!env.google.clientId) throw new ApiError(500, 'GOOGLE_CLIENT_ID is not configured on the server');
+  if (env.google.clientIds.length === 0) {
+    throw new ApiError(500, 'No GOOGLE_CLIENT_ID configured on the server');
+  }
 
   let payload;
   try {
-    const ticket = await googleClient.verifyIdToken({ idToken, audience: env.google.clientId });
+    const ticket = await googleClient.verifyIdToken({ idToken, audience: env.google.clientIds });
     payload = ticket.getPayload();
   } catch {
     throw new ApiError(401, 'Invalid Google ID token');
